@@ -1,0 +1,167 @@
+#include<stdio.h>
+#include<stdlib.h>
+int 语言;
+结构帐户
+{
+字符名称[100];
+字符 ID 卡[19];
+字符 tel[12];
+字符用户名[25];
+字符密码[7];
+浮动货币;
+结构帐户 * 下一个;
+};
+类型定义结构帐户帐户;
+
+Account * head=NULL;//指向头结点的指针
+帐户 * 尾部 = 空;
+void signUp（）
+{
+Account * newNodeP=（Account *）malloc（sizeof（Account））;
+如果（语言==1）
+	{
+printf（“输入姓名：\n”）;
+	}
+else if（language==2）
+	{
+printf（“输入名称：\n”）;
+	}
+scanf（“%s”，newNodeP->name）;
+	
+如果（语言==1）
+	{
+printf（“输入身份证：\n”）;
+	}
+else if（language==2）
+	{
+printf（“Input idCard：\n”）;
+	}
+scanf（“%s”，newNodeP->idCard）;
+	
+如果（语言==1）
+	{
+printf（“输入电话：\n”）;
+	}
+else if（language==2）
+	{
+printf（“Input tel：\n”）;
+	}
+scanf（“%s”，newNodeP->tel）;
+	
+如果（语言==1）
+	{
+printf（“输入卡号：\n”）;
+	}
+else if（language==2）
+	{
+printf（“输入用户名：\n”）;
+	}
+scanf（“%s”，newNodeP->用户名）;
+	
+如果（语言==1）
+	{
+printf（“输入密码：\n”）;
+	}
+else if（language==2）
+	{
+printf（“输入密码：\n”）;
+	}
+scanf（“%s”，newNodeP->password）;
+	
+	newNodeP->money=0.0f;
+	newNodeP->next=NULL;
+	
+	//将结点添加到链表 
+	if(head==NULL)
+	{
+		head=newNodeP;
+		tail=newNodeP;
+	}
+	else
+	{
+		tail->next=newNodeP;
+		tail=newNodeP;
+	}
+	
+	if(language==1)
+	{
+		printf("添加成功！\n");
+	}
+	else if(language==2)
+	{
+		printf("added！\n");
+	}
+}
+
+void signIn()
+{
+	
+}
+void showMenuEnglish()
+{
+	printf("press1,signUp\n");
+	printf("press2,signIn\n");
+	int n;
+	scanf("%d",&n);
+	if(n==1)
+	{
+		signUp();
+	}
+	else if(n==2)
+	{
+		signIn();
+	}
+}
+
+void showMenuChinese()
+{
+	printf("按1,开户\n");
+	printf("按2,登陆\n");
+	printf("按3,退出\n");
+	int n;
+	scanf("%d",&n);
+	if(n==1)
+	{
+		signUp();
+	}
+	else if(n==2)
+	{
+		signIn();
+	}
+	else if(n==3);
+	{
+		return;
+	}
+}
+void printLinkedList（）
+{
+帐户 * curP=头;
+while（curP！=NULL）
+	{
+printf（“%s %s\n”，curP->name，curP->username）;
+curP=curP->next;
+	}
+}
+
+int main（）
+{
+printf（“欢迎来到王者银行\n”）;
+printf（“Welcome to XXX ban\n”）;
+	
+printf（“按1，中文\n”）;
+printf（“按2，英文\n”）;
+scanf（“%d”，&language）;
+如果（语言==1）
+	{
+显示菜单中文（）;
+	}
+else if（language==2）
+	{
+showMenuEnglish（）;
+	}
+	
+printLinkedList（）;
+	
+	
+返回 0;
+}
