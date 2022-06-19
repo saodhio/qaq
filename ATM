@@ -1,72 +1,72 @@
 #include<stdio.h>
 #include<stdlib.h>
-int 语言;
-结构帐户
+int language; 
+struct Account
 {
-字符名称[100];
-字符 ID 卡[19];
-字符 tel[12];
-字符用户名[25];
-字符密码[7];
-浮动货币;
-结构帐户 * 下一个;
+	char name[100];
+	char idCard[19];
+	char tel[12];
+	char username[25];
+	char password[7];
+	float money;
+	struct Account * next;
 };
-类型定义结构帐户帐户;
+typedef struct Account Account;
 
 Account * head=NULL;//指向头结点的指针
-帐户 * 尾部 = 空;
-void signUp（）
+Account * tail=NULL;
+void signUp()
 {
-Account * newNodeP=（Account *）malloc（sizeof（Account））;
-如果（语言==1）
+	Account * newNodeP=(Account *)malloc(sizeof(Account));
+	if(language==1)
 	{
-printf（“输入姓名：\n”）;
+		printf("输入姓名：\n");
 	}
-else if（language==2）
+	else if(language==2)
 	{
-printf（“输入名称：\n”）;
+		printf("Input name:\n");
 	}
-scanf（“%s”，newNodeP->name）;
+	scanf("%s",newNodeP->name);
 	
-如果（语言==1）
+	if(language==1)
 	{
-printf（“输入身份证：\n”）;
+		printf("输入身份证：\n");
 	}
-else if（language==2）
+	else if(language==2)
 	{
-printf（“Input idCard：\n”）;
+		printf("Input idCard:\n");
 	}
-scanf（“%s”，newNodeP->idCard）;
+	scanf("%s",newNodeP->idCard);
 	
-如果（语言==1）
+	if(language==1)
 	{
-printf（“输入电话：\n”）;
+		printf("输入电话：\n");
 	}
-else if（language==2）
+	else if(language==2)
 	{
-printf（“Input tel：\n”）;
+		printf("Input tel:\n");
 	}
-scanf（“%s”，newNodeP->tel）;
+	scanf("%s",newNodeP->tel);
 	
-如果（语言==1）
+	if(language==1)
 	{
-printf（“输入卡号：\n”）;
+		printf("输入卡号：\n");
 	}
-else if（language==2）
+	else if(language==2)
 	{
-printf（“输入用户名：\n”）;
+		printf("Input username:\n");
 	}
-scanf（“%s”，newNodeP->用户名）;
+	scanf("%s",newNodeP->username);
 	
-如果（语言==1）
+	if(language==1)
 	{
-printf（“输入密码：\n”）;
+		printf("输入密码：\n");
 	}
-else if（language==2）
+	else if(language==2)
 	{
-printf（“输入密码：\n”）;
+		printf("Input password:\n");
 	}
-scanf（“%s”，newNodeP->password）;
+	scanf("%s",newNodeP->password);
 	
 	newNodeP->money=0.0f;
 	newNodeP->next=NULL;
@@ -133,35 +133,35 @@ void showMenuChinese()
 		return;
 	}
 }
-void printLinkedList（）
+void printLinkedList()
 {
-帐户 * curP=头;
-while（curP！=NULL）
+	Account * curP=head;
+	while(curP!=NULL)
 	{
-printf（“%s %s\n”，curP->name，curP->username）;
-curP=curP->next;
+		printf("%s %s\n",curP->name,curP->username);
+		curP=curP->next;
 	}
 }
 
-int main（）
+int main()
 {
-printf（“欢迎来到王者银行\n”）;
-printf（“Welcome to XXX ban\n”）;
+	printf("欢迎来到王者银行\n");
+	printf("Welcome to XXX ban\n");
 	
-printf（“按1，中文\n”）;
-printf（“按2，英文\n”）;
-scanf（“%d”，&language）;
-如果（语言==1）
+	printf("按1，中文\n");
+	printf("按2，英文\n");
+	scanf("%d",&language);
+	if(language==1)
 	{
-显示菜单中文（）;
+		showMenuChinese();
 	}
-else if（language==2）
+	else if(language==2)
 	{
-showMenuEnglish（）;
+		showMenuEnglish();
 	}
 	
-printLinkedList（）;
+	printLinkedList();
 	
 	
-返回 0;
+	return 0;	
 }
