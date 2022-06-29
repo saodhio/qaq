@@ -14,13 +14,7 @@ void qukuan();
 void cunkuan();
 void xiugai();
 void load();
-
-
 int j=0,k;
-
-
-
-
 struct yonghu
 {
 char ID[20];
@@ -234,8 +228,6 @@ system("cls");
 }
 }while(n>4&&n<0);
 }
-
-
 void chaxun()
 {
 char ch;
@@ -345,8 +337,6 @@ system("cls");
 enter2();
         }
 }
-
-
 void cunkuan()
 {
 int a;
@@ -360,8 +350,6 @@ system("cls");
 printf("\n\n\n");
 enter2();
 }
-
-
 void xiugai()
 {
 printf("\t\t\t\t请输入新的密码\n\t\t\t\t  ");
@@ -372,8 +360,6 @@ system("cls");
 printf("\n\n\n");
 enter2();
 }
-
-
 void zhuanzhang()
 {
 int a,b,c,x;
